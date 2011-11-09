@@ -3,14 +3,16 @@
  * been loaded onto the page. By default we just render the application's Viewport inside the
  * launch method (see app/views/Viewport.js).
  */ 
-Ext.regApplication('{name}', {
-    defaultTarget: "viewport",
+Ext.Loader.setConfig({
+    enabled: true
+});
+
+Ext.application({
     name         : "{name}",
-    useHistory   : true,
-    
+    controllers  : [],
+
     launch: function() {
-        this.viewport = new {name}.Viewport({
-            application: this
-        });
+		Ext.require('{name}.view.Viewport');
+        Ext.create('{name}.view.Viewport');
     }
 });

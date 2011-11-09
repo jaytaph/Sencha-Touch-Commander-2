@@ -40,7 +40,7 @@ Ext.generator.Application = Ext.extend(Ext.generator.Base, {
         Logger.log("Copying files...");
         
         this.file('index.html');
-        this.file('app/routes.js');
+//        this.file('app/routes.js'); @TODO: Reactivate when the router returns to the framework
         this.file('resources/scss/config.rb');
         this.file('resources/scss/application.scss');
         this.file('resources/css/application.css');
@@ -49,7 +49,7 @@ Ext.generator.Application = Ext.extend(Ext.generator.Base, {
         this.file('test/unit/.htaccess');
         
         this.template('app/app.js',            this);
-        this.template('app/views/Viewport.js', this);
+        this.template('app/view/Viewport.js', this);
     },
     
     /**
@@ -58,10 +58,10 @@ Ext.generator.Application = Ext.extend(Ext.generator.Base, {
     createDirectoryStructure: function() {
         Logger.log("Creating directories...");
         this.mkdir(
-            'app', 'app/models', 'app/stores', 'app/controllers', 'app/views', 'lib', 
+            'app', 'app/model', 'app/store', 'app/controller', 'app/view', 'lib', 
             'resources', 'resources/images', 'resources/css', 'resources/scss',
             'test', 'test/acceptance', 'test/fixtures', 'test/unit',
-            'test/unit/models', 'test/unit/stores', 'test/unit/controllers', 'test/unit/views'
+            'test/unit/model', 'test/unit/store', 'test/unit/controller', 'test/unit/view'
         );
     },
     

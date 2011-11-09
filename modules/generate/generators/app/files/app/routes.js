@@ -12,11 +12,14 @@
  * 
  * Your app.js file can specify a defaultUrl config property, which will be dispatched to if there is
  * no specified url when the application first loads.
+ *
+ * @deprecated Not available in 2.0.0 PR1 
  */
-Ext.Router.draw(function(map) {
+
+/**Ext.Router.draw(function(map) {
     
     
     //These are default fallback routes and can be removed if not needed
     map.connect(':controller/:action');
     map.connect(':controller/:action/:id');
-});
+});**/
